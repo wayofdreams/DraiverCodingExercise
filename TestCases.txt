@@ -1,0 +1,77 @@
+** Valid login attempt
+Test Case 1: Valid Login
+
+Description: To authenticate a user is able to login on draiver.com with proper credentials.
+
+Prerequisites:
+- A valid Username and Password.
+
+Test data:
+- Username: ""
+- Password: ""
+
+Expected Result:
+- User will successfully log in.
+
+Test steps:
+- Open the browser and navigate to draiver.com.
+- Click on the 'Login' button.
+- Enter a valid username in the username field.
+- Enter a valid password in the password field.
+- Click on the 'Log in' button.
+- Verify that the user is successfully logged in by checking for "Please download the DRAIVER app on your mobile device and Create An Account to complete your registration." on the page.
+
+//Test End
+
+
+** Invalid login attempt
+Test Case 2: Invalid Login
+
+Description: To authenticate a user will be unable to login on draiver.com without proper credentials.
+
+Prerequisites:
+- None.
+
+Test data:
+- Username: "jane@example.com"
+- Password: "incorrectpassword"
+
+Expected Result:
+- User will fail to log in, expected error messages will display.
+
+Test steps:
+- Open the browser and navigate to draiver.com.
+- Click on the 'Login' button.
+
+//Invalid Login - Empty Username and Password Check
+- Leave both the username and password fields empty.
+- Click on the 'Log in' button.
+- Verify that the login attempt failed by checking for these error messages: "Please enter your email." and "Please enter your password."
+
+//Invalid Login - Empty Password
+- Enter a valid username in the username field.
+- Leave the password field empty.
+- Click on the 'Log in' button.
+- Verify that the login attempt failed by checking for this error messages: "Please enter your password."
+
+//Invalid Login - Empty Username
+- Leave the username field empty.
+- Enter a valid password in the password field.
+- Click on the 'Log in' button.
+- Verify that the login attempt failed by checking for this error messages: "Please enter your email."
+
+//Invalid Login - Incorrect Username
+- Enter an incorrect username in the username field.
+- Enter a valid password in the password field.
+- Click on the 'Log in' button.
+- Verify that the login attempt failed by checking for this error messages: "Username not found."
+////Note from candidate: Displaying this error is a bad security practice as it is giving information to potential bad actors about which emails/usernames currently exist in your database.
+
+//Invalid Login - Incorrect Password
+- Enter a valid username in the username field.
+- Enter an incorrect password in the password field.
+- Click on the 'Log in' button.
+- Verify that the login attempt failed by checking for this error messages: "Please check password and reset your password if necessary."
+////Note from candidate: A better error message for both incorrect username and password would be a simple "Invalid Credentials". This will not give away private information to bad actors.
+
+//Test End
